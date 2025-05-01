@@ -25,7 +25,14 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        if (auth()->user()->role == 99) {
+            return '/home';
+        }
+
+        return '/';
+    }
 
     /**
      * Create a new controller instance.

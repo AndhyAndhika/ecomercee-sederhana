@@ -1,7 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.core')
 
-@section('content')
-<div class="container">
+@section('onCore')
+    {{-- Navbar --}}
+    @include('layouts.components.navbar')
+
+<div class="container px-1 px-lg-5 my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -10,7 +13,6 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
@@ -62,6 +64,12 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                            </div>
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col text-end">
+                                <a href="{{ route('register') }}">Belum punya akun? <strong>Register</strong></a>
                             </div>
                         </div>
                     </form>

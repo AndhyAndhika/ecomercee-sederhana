@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarketPlaceController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +17,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 /* disable feature register, reset, verify */
+
 Auth::routes([
-    'register' => false,
     'reset' => false,
     'verify' => false,
 ]);
@@ -34,4 +35,4 @@ Route::name('MarketPlace.')->group(function () {
     Route::get('/product/{slug}', [MarketPlaceController::class, 'detailProduct'])->name('detailProduct');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

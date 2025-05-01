@@ -13,7 +13,14 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
+        $this->middleware(['auth', function ($request, $next) {
+            if (auth()->user()->role != 99) {
+                return redirect('/');
+            }
+
+            return $next($request);
+        }]);
     }
 
     /**
