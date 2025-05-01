@@ -17,8 +17,8 @@
 
     {{-- Untuk Keperluan SEO --}}
     <meta name="robots" content="index, follow"> {{-- Meta Tags Dasar --}}
-    <meta name="description" content="@yield('meta_description', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, dolor.')">
-    <meta name="keywords" content="@yield('meta_keywords', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, dolor.')">
+    <meta name="description" content="@yield('meta_description', 'Program ini dibuat sebagai technical test untuk posisi IT Programmer di Haldin Indonesia.')" />
+    <meta name="keywords" content="@yield('meta_keywords', 'Program ini dibuat sebagai technical test untuk posisi IT Programmer di Haldin Indonesia.')" />
     <meta name="author" content="@yield('meta_author', 'Andhika Nur R - IT')">
     <link rel="canonical" href="{{ url('/') }}"> {{-- Canonical URL (Untuk Menghindari Duplicate Content) --}}
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ url('/sitemap.xml') }}"> {{-- Sitemap URL --}}
