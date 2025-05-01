@@ -19,7 +19,7 @@
 @endpush
 @section('onCore')
     {{-- Navbar --}}
-    @include('layouts.components.navbar')
+    @include('layouts.components.navbar', ['countCart' => $countCart])
 
     {{-- Header Banner --}}
     @include('layouts.components.banner', compact('banner'))
@@ -40,10 +40,11 @@
                                     </div>
                                 </div>
                                 <div class="card-footer mt-auto p-3 pt-0 border-top-0 bg-transparent">
-                                    <p class="text-center text-dark fs-5">
+                                    <p class="text-center text-dark fs-5 mb-0">
                                         <span class="text-muted text-decoration-line-through">@rupiah($item->price + ($item->price * 0.25))</span>
                                         @rupiah($item->price)
                                     </p>
+                                    <p class="text-muted text-center small">stock : {{ $item->stock }}</p>
                                 </div>
                             </div>
                         </a>

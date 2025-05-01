@@ -23,15 +23,12 @@ Auth::routes([
     'verify' => false,
 ]);
 
-Route::get('/layout', function () {
-    return view('layouts.core');
-    // return view('welcome');
-})->name('beranda');
-
-
 Route::name('MarketPlace.')->group(function () {
     Route::get('/', [MarketPlaceController::class, 'index'])->name('index');
     Route::get('/my-cart', [MarketPlaceController::class, 'myCart'])->name('myCart');
+    Route::post('/cart/add-to-cart', [MarketPlaceController::class, 'addToCart'])->name('addToCart');
+    Route::post('/cart/remove-from-cart', [MarketPlaceController::class, 'removeFromCart'])->name('removeFromCart');
+    Route::post('/cart/checkout', [MarketPlaceController::class, 'checkout'])->name('checkout');
     Route::get('/product/{slug}', [MarketPlaceController::class, 'detailProduct'])->name('detailProduct');
 });
 

@@ -6,23 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Model
+class Transaction extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name',
-        'slug',
-        'description',
-        'picture',
+        'user_id',
+        'product_id',
+        'qty',
         'price',
-        'stock',
-        'is_active',
+        'status',
     ];
-
-    /* relalational to tabel cart */
-    public function carts()
-    {
-        return $this->hasMany(Cart::class);
-    }
 }

@@ -17,10 +17,21 @@ document.addEventListener('DOMContentLoaded', function () {
     tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
-
-    /* popup untuk cart */
-    const cartEl = document.getElementById('cartPopover');
-    new bootstrap.Popover(cartEl, {
-        customClass: 'cart-popover'
-    });
 });
+
+
+/* function location reload after timeout */
+const reloadPageAfterTimeout = (timeout) => {
+    setTimeout(() => {
+        location.reload();
+    }, timeout);
+}
+
+/* Format as Rupiah */
+const formatRupiah = (number) => {
+    return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+    }).format(number);
+};

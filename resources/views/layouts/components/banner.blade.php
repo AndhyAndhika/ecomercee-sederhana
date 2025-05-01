@@ -1,17 +1,6 @@
 <header class="bg-transparent">
     <div class="container px-1 px-lg-5 my-5">
-        @guest
-        @else
-            <div class="d-flex justify-content-between align-items-center ">
-                <p class="text-end text-muted fw-semibold mb-3 fs-6">
-                    👋 Welcome Back, <span class="text-dark">{{ Auth::user()->name }}</span>
-                </p>
-
-                @if (Auth::user()->role == 99)
-                    <a class="btn btn-secondary btn-sm" href="{{ route('home') }}"> <i class="fa-solid fa-tv"></i> Go To Dashboad</a>
-                @endif
-            </div>
-        @endguest
+        @include('layouts.components.welcomeBack')
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
 
             <div class="carousel-indicators">

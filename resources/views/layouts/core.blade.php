@@ -32,6 +32,7 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
     @stack('css')
 </head>
 <body>
@@ -39,12 +40,15 @@
     @yield('onCore')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script>
         @if(session('success'))
-            toastr.success('{{ session('success') }}', 'Evenity.co.id', {timeOut: 3000})
+            toastr.success('{{ session('success') }}', 'Success!', {timeOut: 3000})
         @elseif(session('error'))
-            toastr.error('{{ session('error') }}', 'Evenity.co.id', {timeOut: 3000})
+            toastr.error('{{ session('error') }}', 'Error!', {timeOut: 3000})
+        @elseif(session('info'))
+            toastr.info('{{ session('info') }}', 'Info!', {timeOut: 3000})
         @endif
     </script>
     @stack('js')
